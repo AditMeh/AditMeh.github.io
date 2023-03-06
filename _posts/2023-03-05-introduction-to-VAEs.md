@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deriving the ELBO for VAEs
-date: 2023-03-05 11:59:00-0400
+date: 2022-11-15 11:59:00-0400
 description: A simple derivation of the ELBO
 giscus_comments: false
 related_posts: false
