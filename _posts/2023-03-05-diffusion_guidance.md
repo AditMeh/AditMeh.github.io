@@ -36,15 +36,59 @@ $$
 
 I simply plugged the variance of $$q(\textbf{x}_t \mid \textbf{x}_0)$$ and the diffusion model we train $$\mathbf{\epsilon}_{\theta} (\textbf{x}_t, t)$$ is supposed to match the noise $$\mathbf{\epsilon}$$, so I substitute that in as well. 
 
-Therefore, I now have an equivalence of the score function in terms of our diffusion model's U-Net. 
+Therefore, I now have an equivalence of the score function in terms of our diffusion model's U-Net. Learning the diffusion model as stated in DDPM is the same thing as learning the score function.
+
+## Classifier Guidance
+
+Given our equivalence of the score function and noise prediction network, we can intuitively understand conditioning. 
+
+If we have some auxillary input $$y$$ that we want to condition on, we the need to model the score function $$\nabla_{\textbf{x}_t} q(\textbf{x}_t \mid \textbf{y})$$. Hence, using bayes rule we can write this as:
+
+$$
+\begin{align*}
+& q(\textbf{x}_t \mid \textbf{y}) = \frac{q(\textbf{y} \mid \textbf{x}_t) q(\textbf{x}_t )}{q(\textbf{y})} \\
+
+& \implies \log q(\textbf{x}_t \mid \textbf{y}) = \log q(\textbf{y} \mid \textbf{x}_t)  + \log q(\textbf{x}_t ) - \log q(\textbf{y}) \\
+
+& \implies \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) = \nabla_{\textbf{x}_t} \log q(\textbf{y} \mid \textbf{x}_t)  + \nabla_{\textbf{x}_t} \log q(\textbf{x}_t )
+
+\end{align*}
+$$
+
+It's evident here that $$\nabla_{\textbf{x}_t} \log q(\textbf{y} \mid \textbf{x}_t)$$ can be computed using a differentiable approximator, such as a softmax classifier (in the case of labels). We can add a hyperparameter $$s$$ (called "guidance"), which controls how much influence this classifier has on our final prediction. 
+
+$$
+\nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) = \nabla_{\textbf{x}_t} \log q(\textbf{x}_t ) + s \cdot \nabla_{\textbf{x}_t} \log q(\textbf{y} \mid \textbf{x}_t)
+$$
+
+The issue is, our $$\textbf{x}_t$$ can be arbitrarily noisy and our classifier will not be able to be accurate at high levels of noise. 
+
 
 ## Classifier-Free Guidance
+Hence, we seek to eliminate our dependence on a classifier, so we use bayes rule once again in the other direction: 
 
-If we 
+$$
 
+\begin{align*}
+& q(\textbf{x}_t \mid \textbf{y}) = \frac{q(\textbf{x}_t \mid \textbf{y}) q(\textbf{y})}{q(\textbf{x}_t)} \\
 
+& \implies \log q(\textbf{x}_t \mid \textbf{y}) = \log q(\textbf{x}_t \mid \textbf{y}) + \log q(\textbf{y}) - \log q(\textbf{x}_t)  \\
 
-<!-- step into bayes rule twice, introduce guidance -->
+& \implies \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) = \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) - \nabla_{\textbf{x}_t} \log q(\textbf{x}_t)  \\
+\end{align*}
+$$
+
+Plugging this back into our equation from Classifier Guidance:
+
+$$
+\begin{align*}
+ \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) &= \nabla_{\textbf{x}_t} \log q(\textbf{x}_t ) + s \cdot (\nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) - \nabla_{\textbf{x}_t} \log q(\textbf{x}_t)) \\
+
+&= (1-s) \cdot \nabla_{\textbf{x}_t} \log q(\textbf{x}_t ) + s \cdot \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y})
+
+\end{align*}
+$$
+
 
 <!-- end with results -->
 
