@@ -42,7 +42,7 @@ Therefore, I now have an equivalence of the score function in terms of our diffu
 
 Given our equivalence of the score function and noise prediction network, we can intuitively understand conditioning. 
 
-If we have some auxillary input $$y$$ that we want to condition on, we the need to model the score function $$\nabla_{\textbf{x}_t} q(\textbf{x}_t \mid \textbf{y})$$. Hence, using bayes rule we can write this as:
+If we have some auxillary input $$y$$ that we want to condition on, we the need to model the score function $$\nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y})$$. Hence, using bayes rule we can write this as:
 
 $$
 \begin{align*}
@@ -70,11 +70,11 @@ Hence, we seek to eliminate our dependence on a classifier, so we use bayes rule
 $$
 
 \begin{align*}
-& q(\textbf{x}_t \mid \textbf{y}) = \frac{q(\textbf{x}_t \mid \textbf{y}) q(\textbf{y})}{q(\textbf{x}_t)} \\
+& q(\textbf{y} \mid \textbf{x}_t) = \frac{q(\textbf{x}_t \mid \textbf{y}) q(\textbf{y})}{q(\textbf{x}_t)} \\
 
-& \implies \log q(\textbf{x}_t \mid \textbf{y}) = \log q(\textbf{x}_t \mid \textbf{y}) + \log q(\textbf{y}) - \log q(\textbf{x}_t)  \\
+& \implies \log q(\textbf{y} \mid \textbf{x}_t) = \log q(\textbf{x}_t \mid \textbf{y}) + \log q(\textbf{y}) - \log q(\textbf{x}_t)  \\
 
-& \implies \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) = \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) - \nabla_{\textbf{x}_t} \log q(\textbf{x}_t)  \\
+& \implies \nabla_{\textbf{x}_t} \log q(\textbf{y} \mid \textbf{x}_t) = \nabla_{\textbf{x}_t} \log q(\textbf{x}_t \mid \textbf{y}) - \nabla_{\textbf{x}_t} \log q(\textbf{x}_t)  \\
 \end{align*}
 $$
 
