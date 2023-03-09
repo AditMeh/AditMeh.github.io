@@ -89,7 +89,20 @@ $$
 \end{align*}
 $$
 
+Ultimately, using our discussion of score functions earlier, we can equate this to learning a diffusion model as:
 
+$$
+\begin{align*}
+
+
+\hat{\epsilon}(\textbf{x}_t, \textbf{y}, t) &= -\frac{1}{\sqrt{1 - \bar{\alpha}_t}} \left (
+(1-s) \cdot \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) 
+ + s \cdot \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, \mathbf{y}, t)
+\right)
+\end{align*}
+$$
+
+We *could* just model $$\boldsymbol{\epsilon}_\theta(\mathbf{x}_t, \mathbf{y}, t)$$ directly, however this formulation allows us to have more fine grained control over how much our learned conditional distribution affects the final generated sample.  
 <!-- end with results -->
 
 
