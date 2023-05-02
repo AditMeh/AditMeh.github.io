@@ -28,4 +28,8 @@ Hi, my name's Aditya and I'm a third year student at UofT studying computer scie
 
 Here's my <a href = "assets/Aditya_resume.pdf"> CV </a>
 
+## Presentations:
+
+Tutorial on Difffusion models (<a href = "https://docs.google.com/presentation/d/1ZOa818YbzXLxfUGjg7RaxYW-vwfLZEDCWYx4GIcHPIc/edit?usp=sharing">Link</a>)
+
 
