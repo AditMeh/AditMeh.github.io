@@ -11,11 +11,11 @@ tags: generative_models
 
 Assume we have some log likelihood $$\log(p_\theta(x))$$ we want to maximize, where the parameters of our probablistic model can be denoted as $$\theta$$. Now, we express it in terms of joint probability of $$p_\theta(x, z)$$ as:
 
-$$\log \left( \int_z p_\theta (x,z) dz \right )$$
+$$\log \left ( \int_z p_\theta (x,z) dz \right )$$
 
 We call $$z$$ a "latent variable". In the case that we have multiple latent variables in a vector $$\mathbf{z} \in \mathbb{R}^n$$, we can write 
 
-$$\log \left( \int_\mathbf{z} p_\theta (x,z_1, z_2, \dots, z_n) d\mathbf{z}  \right )$$
+$$\log \left ( \int_\mathbf{z} p_\theta (x,z_1, z_2, \dots, z_n) d\mathbf{z}  \right )$$
 
 
 This is intractable, as this requires way too many $$\mathbf{z}$$ values to get a good enough approximation.
