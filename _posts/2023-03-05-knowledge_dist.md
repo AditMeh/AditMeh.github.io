@@ -102,9 +102,7 @@ over the classes. Here are a few examples where $$n=5$$ and $$z_{i} = [1,2,3,4,5
         {% include figure.html path="/assets/img/distillation/temperature_example.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">
-    Graphical model of the VAE
-</div>
+
 
 As you can see, the distribution gets softer and softer peaks as we increase $$T$$ and generally seems to be
 approaching a uniform distribution. However, relationship between the class probabilities with regards to
@@ -115,14 +113,12 @@ except for very high values of $$T$$.
 
 Now here's the interesting bit, assume we trained a simple feedforward classifier on MNIST ($$n = 10$$). If we sample the following image and feed it into the classifier, we get the following softmax scores. $$T$$ is set to 1, so this is just with the standard softmax function.
 
-<div class="row">
+<div class="equation">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="/assets/img/distillation/regular_softmax_score.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">
-    Graphical model of the VAE
-</div>
+
 
 Pretty good right? Notice that the probability for the GT class <b>4</b> is much higher than the others, so
     our
@@ -136,9 +132,7 @@ Pretty good right? Notice that the probability for the GT class <b>4</b> is much
         {% include figure.html path="/assets/img/distillation/various_temperatures.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-<div class="caption">
-    Graphical model of the VAE
-</div>
+
 
 The distribution is getting softer and softer as we increase the temperature, and we begin to see the
 relationship between the smaller probabilities. The ground truth class is a <b>4</b>, but the image also looks a
