@@ -26,7 +26,7 @@ Hi, my name's Aditya and I'm a third year student at UofT studying computer scie
 - Transformers
 - Eventually I plan on learning CUDA + How GPUs are used in deep learning at a low level
 
-Here's my <a href = "assets/Aditya_resume.pdf"> CV </a>
+Here's my <a href = "https://drive.google.com/file/d/1KXI2hNXdKIuAaxyukKirS6X_rVlInrvP/view?usp=sharing"> CV </a>
 
 ## Presentations:
 
