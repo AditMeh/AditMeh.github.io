@@ -106,7 +106,7 @@ Let's visualize what this function looks like compared to our previous one.
 </div>
 
 
-As you can see, it's very similar to our previous attempt at a CDF and puts a lot of density around the regions with t-values that have a high probability. To illustrate this, I sampled 100 values $$(u_1, ..., u_100)$$ and computed $$t_{u_i}$$ for each of them using the inverse transform sampling scheme I described earlier. On the left of the plot below, Each $u_i$ is plotted in blue on the y-axis, and the corresponding $$t_{u_i}$$'s are also plotted in blue on the x axis. 
+As you can see, it's very similar to our previous attempt at a CDF and puts a lot of density around the regions with t-values that have a high probability. To illustrate this, I sampled 100 values $$(u_1, ..., u_100)$$ and computed $$t_{u_i}$$ for each of them using the inverse transform sampling scheme I described earlier. On the left of the plot below, Each $$u_i$$ is plotted in blue on the y-axis, and the corresponding $$t_{u_i}$$'s are also plotted in blue on the x axis. 
 
 On the right of the plot below, I've plotted the original t-values and their normalized weights, exactly the same as the first figure in this blogpost. However, I've added the green dots on the x-axis which correspond to each of the $$t_{u_i}$$'s. As you can see, most of them lie in high density regions of the ray. This shows that with this method, we're able to sample t-values from high density regions along the ray using inverse transform sampling.
 
