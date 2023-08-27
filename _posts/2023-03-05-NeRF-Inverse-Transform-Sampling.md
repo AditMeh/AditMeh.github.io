@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Hierarchical Sampling in NeRF
+title: Inverse Transform Sampling in NeRF
 date: 2023-08-06 11:59:00-0400
-description: Going over an implementation of hierarchical sampling in NeRF
+description: Going over an implementation of inverse transform sampling in NeRF
 giscus_comments: false
 related_posts: false
 tags: computer_vision
