@@ -114,7 +114,7 @@ This is exactly what is done in the paper. Here is the sequence of steps to deco
 1. For each slot of shape $$(D, )$$, use add two new spatial dimensions and repeat, getting a shape of $$(D, \hat{H}, \hat{W})$$
 2. Run this through a series of transpose convolutions, to get images of shape $$(4, H, W)$$. 
 3. The first 3 channels are RGB respectively, the last is an alpha channel. So for each slot $$i \in \{1, \dots, K\}$$, we split each feature map into $$C_i \in \mathbb{R}^{3\times H \times W}$$ and $$\alpha_i \in \mathbb{R}^{3 \times H \times W}$$ (we simply took our alpha channel and repeated it 3 times, so the shape lines up with $$C_i$$).
-4. Finally we compose these by to get predicted image $\hat{Y}$.
+4. Finally we compose these by to get predicted image $$\hat{Y}$$.
 
  $$ \hat{Y} = \sum_{i=1}^K \alpha_i \odot C_i$$
 
