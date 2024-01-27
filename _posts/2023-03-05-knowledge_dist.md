@@ -8,25 +8,21 @@ related_posts: false
 tags: deep_learning_tricks computer_vision
 ---
 
-
 This post will go over the math and mechanics of how <a href="https://arxiv.org/abs/1503.02531">Knowledge Distillation</a> works and also include some code on how to implement it.
 
 <h2> Preliminaries:</h2>
 
 Say you have a classification task, where you have some feedforward net to classify the digits of MNIST.
-    Denote the number of samples in the minibatch as $$m$$, so we index a sample with $$i \in [1, m]$$ and also
-    denote the number of output classes as $$n \in \mathbb{N}$$. The feedforward net produces unnormalized class
-    scores (final output from the model), which we will denote as a vector $$z_i \in \mathbb{R}^n$$. Finally, we
-    retrieve a probability distribution over the output classes using the softmax function applied to the $$z_i$$,
-    we will denote this as $$a_i \in \mathbb{R}^n$$. Finally, I will use an arbitrary $$k \in [0, n-1]$$ to index my
-    vectors. So $$z_{i,k}$$ represents the $$k^{th}$$ element of $$z_i$$, and likewise for $$a_i$$. Here is the formula:
-
+Denote the number of samples in the minibatch as $$m$$, so we index a sample with $$i \in [1, m]$$ and also
+denote the number of output classes as $$n \in \mathbb{N}$$. The feedforward net produces unnormalized class
+scores (final output from the model), which we will denote as a vector $$z_i \in \mathbb{R}^n$$. Finally, we
+retrieve a probability distribution over the output classes using the softmax function applied to the $$z_i$$,
+we will denote this as $$a_i \in \mathbb{R}^n$$. Finally, I will use an arbitrary $$k \in [0, n-1]$$ to index my
+vectors. So $$z_{i,k}$$ represents the $$k^{th}$$ element of $$z_i$$, and likewise for $$a_i$$. Here is the formula:
 
 $$\LARGE{a_{i,k} := \frac{e^{z_{i,k}}}{\sum_{j=0}^{n-1} e^{z_{i,j}}}}$$
 
-
 <p>Here is an example of it being used (rounded to four digits): </p>
-
 
 $$
 \begin{align*}
@@ -72,7 +68,7 @@ $$
     \end{align*}
 $$
 
-The ground truth one hot vector is denoted $y_i$ for sample $i$ and the output softmax distribution is denote $$\hat{y_i} = a_i$$. The loss function that is traditionally used is categorical cross entropy loss. Also, assume your ground truth labels are some one hot encoded vector, with a one at the index of the true class label. Here is its form with a few simplifications: 
+The ground truth one hot vector is denoted $y_i$ for sample $i$ and the output softmax distribution is denote $$\hat{y_i} = a_i$$. The loss function that is traditionally used is categorical cross entropy loss. Also, assume your ground truth labels are some one hot encoded vector, with a one at the index of the true class label. Here is its form with a few simplifications:
 
 $$
 CE(y, \hat{y}) = -\frac{1}{m} \sum_{i=1}^{m} \sum_{j=0}^{n-1} y^j \cdot log(\hat{y_i})= -\frac{1}{m} \sum_i^{m}log(\hat{y_i})
@@ -82,12 +78,10 @@ $$
     the
     probabilities of the other classes.</p>
 
-
 <h2>Softmax Temperature:</h2>
 Now, let us modify our softmax function a little bit:
 
 $$\Large{a_{i,k} := \frac{e^{\frac{z_{i,k}}{T}}}{\displaystyle\sum_{j=1}^{n-1} e^{\frac{z_{i,j}}{T}}}}$$
-
 
 I have introduced a new hyperparameter $$T$$, which is commonly called "temperature" or "softmax temperature".
 
@@ -96,18 +90,16 @@ Firstly, convince yourself that as $$T \rightarrow \infty$$, each $$a_{i,k}$$ wi
 This means that as $$T$$ gets larger, the softmax distribution becomes a more softer probability distribution
 over the classes. Here are a few examples where $$n=5$$ and $$z_{i} = [1,2,3,4,5]$$:
 
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="/assets/img/distillation/temperature_example.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
-
 As you can see, the distribution gets softer and softer peaks as we increase $$T$$ and generally seems to be
 approaching a uniform distribution. However, relationship between the class probabilities with regards to
 size stays about the same. As shown above, the classes 0-4 have increasing probability from right to left,
-except for very high values of $$T$$. 
+except for very high values of $$T$$.
 
 <h2>"Dark Knowledge":</h2>
 
@@ -119,20 +111,16 @@ Now here's the interesting bit, assume we trained a simple feedforward classifie
     </div>
 </div>
 
-
 Pretty good right? Notice that the probability for the GT class <b>4</b> is much higher than the others, so
-    our
-    distribution peaks very highly at a certain point. The other probabilities are very small in comparison, and
-    are not really interpertable. Now lets turn up the temperature to some higher values of $$T$$.
-
-
+our
+distribution peaks very highly at a certain point. The other probabilities are very small in comparison, and
+are not really interpertable. Now lets turn up the temperature to some higher values of $$T$$.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="/assets/img/distillation/various_temperatures.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
-
 
 The distribution is getting softer and softer as we increase the temperature, and we begin to see the
 relationship between the smaller probabilities. The ground truth class is a <b>4</b>, but the image also looks a
@@ -143,11 +131,8 @@ call these probability distributions generated through softmax with temperature 
 are a lot more meaningful than the standard one hot encoded labels since they encode information about what
 classes the sample resembles. This boosts its ability to classify other classes that aren't the ground truth class.
 
-
 <h2>Aside: Why is there a meaningful relationship between probabilities of non-ground truth classes in a softmax
 distribution? </h2>
-
-
 
 A core reason of why knowledge distillation works is because we assume that the softmax probabilities of classes
 that aren't the ground truth class are meaningful. Specifically in the knowledge distillation paper, Hinton et
@@ -167,8 +152,8 @@ However, I wasn't too sure what is the reasoning behind why we can say this and 
 <br>
 
 <i>Couldn't the model learn to give a
-    high probability to the target class for an image and meaningless assorted probabilities to the
-    others?</i>
+high probability to the target class for an image and meaningless assorted probabilities to the
+others?</i>
 
 After struggling with this question for a while, I found a satisfying answer from asking around
 on <a
@@ -182,7 +167,6 @@ overlap,
 it is evident that each of the class probabilities should contain information about how much the sample
 resembles class X, rather than the non-ground-truth probabilities being meaningless noise.
 
-
 <h2>Distillation loss:</h2>
 
 Given a model trained on a dataset using the standard softmax activation (when $$T=1$$), which we call a teacher
@@ -193,9 +177,11 @@ model, we want to train another model (potentially with a different architecture
 Denote the logits of student network as $$z_i$$ and denote the logits of the teacher network as $$\tilde z_i$$.
 The student model is trained using the following objective, with a fixed hyperparameter $$T$$:
 
-$$L = \alpha \cdot CE(y_i, \text{S}(z_i)) +\\ (1- \alpha) \cdot
+$$
+L = \alpha \cdot CE(y_i, \text{S}(z_i)) +\\ (1- \alpha) \cdot
 CE(\text{S}(\frac{z_i}{T}),
-\text{S}(\frac{\tilde z_i}{T}))$$
+\text{S}(\frac{\tilde z_i}{T}))
+$$
 
 Where $$S$$ is the softmax function.
 
@@ -208,7 +194,6 @@ connections between cross entropy and KL divergence.
 
 <h2>Putting it together:</h2>
 
-
 I will go over the steps required to distill knowledge from a teacher network into a (perhaps smaller) student
 network.
 
@@ -216,7 +201,6 @@ network.
     <li> First, train a teacher network as you would normally, the final activation on the logits needs to be a softmax. Save the weights.</li>
     <li> Train a student network, another classifier with a softmax activation, using the previously explained loss </li>
 </ol>
-
 
 <b>Thank you for reading this post!</b>
 

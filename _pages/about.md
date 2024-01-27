@@ -2,25 +2,25 @@
 layout: about
 title: about
 permalink: /
-subtitle: 
+subtitle:
 
 profile:
   align: right
   image: Cockatiel.jpg
   image_circular: false # crops the image to make it circular
 
-
-news: false  # includes a list of news items
+news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 ---
 
 Hi, my name's Aditya and I'm a third year student at UofT studying computer science.
 
 <br>
- Currently I'm doing research under professor Rahul Gopalkrishnan working on style transfer for diffusion models while working on some side projects 
+ Currently I'm doing research under professor Rahul Gopalkrishnan working on style transfer for diffusion models while working on some side projects
 
- My current interests are in:
+My current interests are in:
+
 - NeRFs
 - Generative Models
 - Transformers
@@ -33,5 +33,3 @@ My email is aditya.mehrotra@mail.utoronto.ca.
 ## Presentations:
 
 Tutorial on Difffusion models (<a href = "https://docs.google.com/presentation/d/1ZOa818YbzXLxfUGjg7RaxYW-vwfLZEDCWYx4GIcHPIc/edit?usp=sharing">Link</a>)
-
-
