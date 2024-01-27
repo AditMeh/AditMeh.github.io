@@ -129,7 +129,7 @@ Here's a visual of the pipeline I presented above for this image with 7 objects 
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/slot-attention/slot_attn_diagram.png?raw=true" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/slot-attention/slot_attn_diagram.png?raw=true" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 

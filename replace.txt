@@ -1,0 +1,74 @@
+ CNAME (new)                                        |   1 +
+ CNAME.txt (new +x)                                 |   1 +
+ Gemfile                                            |   1 +
+ README.md                                          | 450 +--------------------
+ _pages/about.md                                    |  39 +-
+ _posts/2015-07-15-code.md (gone)                   | 100 -----
+ _posts/2020-09-28-github-metadata.md (gone)        |  39 --
+ _posts/2021-07-04-diagrams.md (gone)               |  34 --
+ ...-03-05-NeRF-Inverse-Transform-Sampling.md (new) | 124 ++++++
+ _posts/2023-03-05-buffervsparameter.md (new)       |  47 +++
+ _posts/2023-03-05-diffusion_guidance.md (new)      | 113 ++++++
+ _posts/2023-03-05-introduction-to-VAEs.md (new)    |  75 ++++
+ _posts/2023-03-05-knowledge_dist.md (new)          | 225 +++++++++++
+ _posts/2023-03-20-table-of-contents.md (gone)      |  45 ---
+ _posts/2023-03-21-tables.md (gone)                 | 106 -----
+ _posts/2023-04-24-videos.md (gone)                 |  33 --
+ _posts/2023-04-25-audios.md (gone)                 |  22 -
+ .../2023-04-25-sidebar-table-of-contents.md (gone) |  47 ---
+ _posts/2023-05-12-custom-blockquotes.md (gone)     | 131 ------
+ _posts/2023-07-04-jupyter-notebook.md (gone)       |  40 --
+ _posts/2023-07-12-post-bibliography.md (gone)      |  22 -
+ _posts/2023-12-12-tikzjax.md (gone)                |  19 -
+ _posts/2024-01-22-Slot-Attention.md (new)          | 141 +++++++
+ _posts/2024-01-26-chartjs.md (gone)                | 187 ---------
+ _projects/1_project.md (gone)                      |  81 ----
+ _projects/2_project.md (gone)                      |  81 ----
+ _projects/Distillation_project.md (new)            |  12 +
+ _projects/NeRF_project.md (new)                    |  12 +
+ _projects/VAE_project.md (new)                     |  12 +
+ _projects/iterative_alpha_project.md (new)         |  12 +
+ assets/Aditya_resume.pdf (new +x)                  | Bin 0 -> 100179 bytes
+ assets/img/Cockatiel.jpg (new)                     | Bin 0 -> 136177 bytes
+ assets/img/Cockatiel.jpg:Zone.Identifier (new)     |   0
+ assets/img/NeRF/spinning_view.gif (new)            | Bin 0 -> 1816817 bytes
+ assets/img/al-folio-preview.png (new)              | Bin 0 -> 818713 bytes
+ assets/img/buffer/torchlogo.png (new)              | Bin 0 -> 24056 bytes
+ assets/img/code-screenshot.png (new)               | Bin 0 -> 186000 bytes
+ assets/img/distill-screenshot.png (new)            | Bin 0 -> 190635 bytes
+ .../regular_softmax_score.png (new +x)             | Bin 0 -> 10285 bytes
+ .../img/distillation/temperature_example.png (new) | Bin 0 -> 17567 bytes
+ .../distillation/various_temperatures.png (new +x) | Bin 0 -> 19430 bytes
+ assets/img/elbo/VAE_graphical_model.png (new)      | Bin 0 -> 21040 bytes
+ .../VAE_graphical_model.png:Zone.Identifier (new)  |   0
+ assets/img/hierarchical/figure1.png (new)          | Bin 0 -> 23359 bytes
+ assets/img/hierarchical/figure2.png (new)          | Bin 0 -> 16128 bytes
+ assets/img/hierarchical/figure3.png (new)          | Bin 0 -> 39004 bytes
+ assets/img/hierarchical/figure4.png (new)          | Bin 0 -> 23727 bytes
+ assets/img/hierarchical/figure5.png (new)          | Bin 0 -> 119664 bytes
+ assets/img/iadb/repaint.png (new)                  | Bin 0 -> 238273 bytes
+ assets/img/math-screenshot.png (new)               | Bin 0 -> 192374 bytes
+ assets/img/photos-screenshot.png (new)             | Bin 0 -> 972431 bytes
+ assets/img/projects-screenshot.png (new)           | Bin 0 -> 862044 bytes
+ assets/img/publications-screenshot.png (new)       | Bin 0 -> 215861 bytes
+ assets/img/slot-attention/orig.png (new)           | Bin 0 -> 14674 bytes
+ assets/img/slot-attention/recons.png (new)         | Bin 0 -> 15017 bytes
+ assets/img/slot-attention/rgbs.png (new)           | Bin 0 -> 75303 bytes
+ .../img/slot-attention/slot_attn_diagram.png (new) | Bin 0 -> 1180369 bytes
+ assets/img/vae/vae_interpolation.gif (new)         | Bin 0 -> 5582039 bytes
+ .../2015-03-15-formatting-and-links.md             |   8 +-
+ {_posts => posts_archive}/2015-05-15-images.md     |   4 +-
+ posts_archive/2015-07-15-code.md (new)             |  41 ++
+ .../2015-10-20-disqus-comments.md                  |   2 -
+ {_posts => posts_archive}/2015-10-20-math.md       |   3 +-
+ {_posts => posts_archive}/2018-12-22-distill.md    |  88 ++--
+ posts_archive/2020-09-28-github-metadata.md (new)  |  35 ++
+ {_posts => posts_archive}/2020-09-28-twitter.md    |  44 +-
+ posts_archive/2021-07-04-diagrams.md (new)         |  43 ++
+ {_posts => posts_archive}/2022-02-01-redirect.md   |   0
+ .../2022-12-10-giscus-comments.md                  |   2 -
+ {_projects => posts_archive}/3_project.md          |  21 +-
+ {_projects => posts_archive}/4_project.md          |  22 +-
+ {_projects => posts_archive}/5_project.md          |  20 +-
+ {_projects => posts_archive}/6_project.md          |  19 +-
+ 73 files changed, 1029 insertions(+), 1575 deletions(-)

@@ -35,7 +35,7 @@ Let's start simple, lets say we have the following ordered set of (t-value, $$\h
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/hierarchical/figure1.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/hierarchical/figure1.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -47,7 +47,7 @@ Okay, now let's compute the cumulative sum. We will now have points $$(t_1, \bar
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/hierarchical/figure2.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/hierarchical/figure2.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -66,7 +66,7 @@ Here are some visualizations of this procedure:
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/hierarchical/figure3.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/hierarchical/figure3.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -101,7 +101,7 @@ Let's visualize what this function looks like compared to our previous one.
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/hierarchical/figure4.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/hierarchical/figure4.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -116,7 +116,7 @@ On the right of the plot below, I've plotted the original t-values and their nor
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/hierarchical/figure5.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/hierarchical/figure5.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 

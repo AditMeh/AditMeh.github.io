@@ -99,7 +99,7 @@ over the classes. Here are a few examples where $$n=5$$ and $$z_{i} = [1,2,3,4,5
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/distillation/temperature_example.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/distillation/temperature_example.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -115,7 +115,7 @@ Now here's the interesting bit, assume we trained a simple feedforward classifie
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/distillation/regular_softmax_score.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/distillation/regular_softmax_score.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -129,7 +129,7 @@ Pretty good right? Notice that the probability for the GT class <b>4</b> is much
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/distillation/various_temperatures.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="/assets/img/distillation/various_temperatures.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
