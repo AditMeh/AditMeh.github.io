@@ -6,9 +6,10 @@ description: Going over the basics of Slot Attention, and covering some recent l
 giscus_comments: false
 related_posts: false
 tags: computer_vision
+related_publications: true
 ---
 
-In this blog post, I'll cover the basic slot attention mechanism and go over some intuition as to why it works.
+In this blog post, I'll cover the basic slot attention mechanism {% cite  locatello2020objectcentric %} and go over some intuition as to why it works.
 
 The problem we tackle is learning representations for particular regions of images, like a representation for a box, sphere or background of the scene.
 
@@ -65,7 +66,7 @@ This motivates the question, can we use parameters and highly expressive neural 
 
 The slot attention operation works as follows:
 
-**Setup:** Initialize embedding weights for key, query and value projection $$q( \cdot ), k(\cdot), v(\cdot)$$. Also initialize $$N_\text{slots}$$ slots of embedding dimension $$D$$, basically a matrix of shape $$N_{\text{slots}} \times D$$. These can be sampled from an isotropic normal with learned mean $$\boldsymbol{\mu} \in \mathbb{R}^{D}$$
+**Setup:** Initialize embedding weights for key, query and value projection $$q( \cdot ), k(\cdot), v(\cdot)$$ {% cite  vaswani2023attention %}. Also initialize $$N_\text{slots}$$ slots of embedding dimension $$D$$, basically a matrix of shape $$N_{\text{slots}} \times D$$. These can be sampled from an isotropic normal with learned mean $$\boldsymbol{\mu} \in \mathbb{R}^{D}$$
 
 **Repeat T times**:
 
