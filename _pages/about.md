@@ -14,10 +14,10 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi, my name's Aditya and I'm a third year student at UofT studying computer science.
+Hi, my name's Aditya and I'm a fourth year student at UofT studying computer science.
 
 <br>
- Currently I'm doing research under professor Rahul Gopalkrishnan working on style transfer for diffusion models while working on some side projects
+ Currently I'm doing research under Professor Rahul Gopalkrishnan working on vision transformers for gigapixel images.
 
 My current interests are in:
 
