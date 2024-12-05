@@ -10,3 +10,4 @@ Gemfile.lock
 node_modules/
 vendor
 posts_archive/
+*:Zone.Identifier*
