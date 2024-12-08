@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.cs.toronto.edu/~aditmeh//sitemap.xml
+Sitemap: adityamehrotra.ca/sitemap.xml
