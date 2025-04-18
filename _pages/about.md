@@ -17,7 +17,7 @@ social: true # includes social icons at the bottom of the page
 Hi, my name's Aditya and I'm a fourth year student at UofT studying computer science.
 
 <br>
-- Currently I'm doing research under Professor Rahul Gopalkrishnan working on vision transformers for gigapixel images.
+- Currently I'm doing research under Professor Rahul G Krishnan working on vision transformers for gigapixel images.
 - Interned at [Artera AI](https://artera.ai/) as a Machine Learning Intern over the summer. Also working with Gigapixel Images along with model interpretability.
 - Working with Ashkan Mirazei on personalizing diffusion models.
 
