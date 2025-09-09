@@ -7,7 +7,7 @@ giscus_comments: false
 related_posts: false
 tags: computer_vision
 ---
-I was reading the [gsplat technical report](https://arxiv.org/abs/2312.02121) and saw this formula for the camera-space to clip space conversion matrix. If we want to get to NDC space, we simply divide everything by the $$w$$ coordinate.
+I was reading the [gsplat technical report](https://arxiv.org/abs/2312.02121) {% cite ye2024gsplatopensourcelibrarygaussian %}  and saw this formula for the camera-space to clip space conversion matrix. If we want to get to NDC space, we simply divide everything by the $$w$$ coordinate.
 
 $$P=\left[\begin{array}{cccc}
 2 f_x / w & 0 & 0 & 0 \\
@@ -31,6 +31,8 @@ Before we start, some terms:
 - Clip space: Perspective projection (minus the step of dividing by $$w_{camera} = z_{camera}$$, aka depth) and dividing by near plane half-width
 - Screen space: After perspective projection, but no other scaling. Basically just existing on the near plane, with the depth being equal to the focal length. 
 - NDC space: Perspective projection and dividing by near plane half-width, to get a point in $$[-1,1]$$.
+
+All derivations around OpenGL and NDC space are done by referncing the bible {% cite Ahn %}
 
 ## Explaining the difference
 
