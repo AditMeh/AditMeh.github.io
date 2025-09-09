@@ -6,6 +6,7 @@ description: Explaining the difference between conventional camera space to ndc 
 giscus_comments: false
 related_posts: false
 tags: computer_vision
+related_publications: true
 ---
 I was reading the [gsplat technical report](https://arxiv.org/abs/2312.02121) {% cite ye2024gsplatopensourcelibrarygaussian %}  and saw this formula for the camera-space to clip space conversion matrix. If we want to get to NDC space, we simply divide everything by the $$w$$ coordinate.
 
