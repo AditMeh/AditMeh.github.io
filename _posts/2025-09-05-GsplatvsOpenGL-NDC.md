@@ -33,7 +33,7 @@ Before we start, some terms:
 - Screen space: After perspective projection, but no other scaling. Basically just existing on the near plane, with the depth being equal to the focal length. 
 - NDC space: Perspective projection and dividing by near plane half-width, to get a point in $$[-1,1]$$.
 
-All derivations around OpenGL and NDC space are done by referncing the bible {% cite Ahn %}
+All derivations around OpenGL and NDC space are done by referncing a beautiful [blogpost](https://www.songho.ca/opengl/gl_projectionmatrix.html) on NDC space conversion matrices {% cite AhnOpenGL %}
 
 ## Explaining the difference
 
