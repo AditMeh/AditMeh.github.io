@@ -29,7 +29,7 @@ My current interests are in:
 - Getting things to work properly at larger scales (compute, # data, dimensionality)
 - Eventually I plan on learning CUDA + How GPUs are used in deep learning at a low level
 
-Here's my <a href = "https://drive.google.com/file/d/1KXI2hNXdKIuAaxyukKirS6X_rVlInrvP/view?usp=sharing"> CV </a>.
+Here's my <a href = "https://drive.google.com/file/d/1xOgwHoxaxtOYWf9-c1rvVOwAKWZHmML8/view?usp=sharing"> CV </a>.
 
 My email is aditya.mehrotra@mail.utoronto.ca.
 
