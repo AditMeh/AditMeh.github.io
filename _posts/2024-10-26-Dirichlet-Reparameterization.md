@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Implicit gradients and Dirichlet uncertainty
-date: 2024-10-26 11:59:00-0400
+date: 2030-10-26 11:59:00-0400
 description: 
 giscus_comments: false
 related_posts: false
