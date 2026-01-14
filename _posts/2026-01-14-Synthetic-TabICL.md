@@ -31,7 +31,7 @@ Let's try a simple test. Let's take CIFAR10 and embed the images using a DINOV2 
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ICL_SSL/cifar.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/ICL_SSL/cifar.png?raw=True" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -41,7 +41,7 @@ Since the backbone of TabICL is a transformer, we can also obseve a scaling law 
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ICL_SSL/cifar_time.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/ICL_SSL/cifar_time.png?raw=True" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -58,7 +58,7 @@ To circumvent this, I took advantage of recent works in dataset distillation. To
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ICL_SSL/linear_dd.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/ICL_SSL/linear_dd.png?raw=True" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -70,7 +70,7 @@ Let's benchmark this technique on the imagenette subset, a 10-class subset of im
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ICL_SSL/imagenette2_grid.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/ICL_SSL/imagenette2_grid.png?raw=True" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -78,7 +78,7 @@ Now here's what our synthetic samples per class look like:
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ICL_SSL/fake_grid.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/ICL_SSL/fake_grid.png?raw=True" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -95,7 +95,7 @@ For the random sample baseline, here's the distribution of test performance acro
 
 <div class="equation">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ICL_SSL/random.png" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="https://github.com/AditMeh/AditMeh.github.io/blob/master/assets/img/ICL_SSL/random.png?raw=True" title="example image" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
